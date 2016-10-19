@@ -1,0 +1,236 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700,600,200,300,900);
+/*general styles here*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  background-color: #ddd;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: inherit;
+}
+
+a {
+  color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: color 0.35s ease-in-out;
+  transition: color 0.35s ease-in-out;
+}
+a:hover {
+  color: #00a7c9;
+}
+/* menu styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 50px;
+  margin-top: 40px;
+  z-index: 99999;
+}
+
+/**
+ * Apply these styles to .dropdown-menu when user hovers
+ * over .dropdown
+ */
+.dropdown:hover .dropdown-menu {
+  /** Show dropdown menu */
+  display: block;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  display: none;
+  top: 90%;
+  left: 0;
+  margin: 0;
+  list-style: none; /** Remove list bullets */
+  width: 100px; /** Set the width to 100% of it's parent */
+  padding: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/** Button Styles **/
+.dropdown button {
+  background: #3004E0;
+  color: #FFFFFF;
+  border: none;
+  margin: 0;
+  font-family: Montserrat;
+  font-weight: 900;
+  padding: 0.8em 0.8em;
+  font-size: 1em;
+}
+
+/** List Item Styles **/
+.dropdown a {
+  display: block;
+  padding: 0.2em 0.8em;
+  text-decoration: none;
+  background: #CCCCCC;
+  color: #333333;
+}
+
+/** List Item Hover Styles **/
+.dropdown a:hover {
+  background: #BBBBBB;
+}
+
+/*card styles here*/
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.card .panel {
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  padding: 1.5rem 2rem;
+  /* position: absolute; */
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: hidden;
+}
+.card .meta {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  padding: 2rem 4rem;
+  border-right: 1px solid transparent;
+}
+.card .meta picture {
+  position: relative;
+  display: inline-block;
+}
+.card .meta img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card .meta .avatar {
+  border-radius: 50%;
+}
+.card .meta .name {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 300;
+}
+.card .meta .title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1rem 0 0;
+}
+
+.card .info dt {
+  margin: 0;
+  padding: 1rem 0;
+}
+.card .info dt:first-child {
+  padding-top: 0;
+}
+.card .info dt:after {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 0.5rem;
+  content: "";
+  display: block;
+}
+.card .info dd {
+  height: 0.5rem;
+  position: relative;
+  right: 0;
+  margin: -1.5rem 0 0;
+  /* background-color: nth($colors, 1); */
+  overflow: hidden;
+  text-indent: -1000px;
+}
+/* avoid over qualification */
+
+.card .info dd:nth-child(2) {
+  background-color: #E89B35;
+  width: 98% !important;
+}
+.card .info dd:nth-child(4) {
+  background-color: #36CBE9;
+  width: 70% !important;
+}
+.card .info dd:nth-child(6) {
+  background-color: #A137E7;
+  width: 40% !important;
+}
+.card .info dd:nth-child(8) {
+  background-color: #3399FF;
+  width: 35% !important;
+}
+
+/*social icon styles here*/
+.card .social {
+  list-style: none;
+  margin: 0;
+  text-align: center;
+}
+.card .social li {
+  display: inline-block;
+}
+.card .social li a {
+  display: block;
+  overflow: hidden;
+  text-indent: -1000px;
+  height: 1em;
+  font-size: 1.8rem;
+  padding: 0.1em;
+  margin: 0 0.1em;
+}
+.card .social li a:before {
+  display: block;
+  text-indent: 0;
+  font-size: 1em;
+}
+
+footer{
+  position: absolute;
+  bottom: 20px;
+}
+footer span{
+  text-align: center;
+}
+/*mobile styles here*/
+@media only screen and (min-width: 768px) {
+  .card {
+    width: 18rem;
+  }
+  .card .info {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    top: 0;
+    left: 0;
+    z-index: 0;
+    position: absolute;
+  }
+  .card:hover .meta {
+    -webkit-transform: translateX(-69.5%);
+    transform: translateX(-69.5%);
+    border: 1px dashed #ddd;
+  }
+  .card:hover .info {
+    -webkit-transform: translateX(20%);
+    transform: translateX(20%);
+    width: 150%;
+  }
+}
